@@ -1,0 +1,36 @@
+# Environment — never commit real credentials
+.env
+
+# Composer
+/vendor/
+
+# User-uploaded files (directory structure is preserved via .gitkeep)
+/public/uploads/products/*
+/public/uploads/sub_categories/*
+!/public/uploads/products/.gitkeep
+!/public/uploads/sub_categories/.gitkeep
+
+# Static images (large assets)
+public/images/
+public/uploads/
+
+# Logs
+*.log
+/storage/logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / editor
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo
+*~
+
+# PHP build artifacts
+*.cache

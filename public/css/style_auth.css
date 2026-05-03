@@ -1,0 +1,189 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #fdf8f1, #f9f5ea);
+    /* background-color: #fff; */
+    overflow-x: hidden;
+    text-align: center;
+}
+    
+.navbar-custom {
+background-color: #ffffff;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+padding: 0.8rem 2rem;
+}
+
+.navbar-brand img {
+    width: 55px;
+}
+
+.navbar-center-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: 600;
+}
+
+.span-nav {
+    color: #00754a;
+    font-size: 1.3rem;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+}
+
+.scroll-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    padding: 40px 20px;
+    background: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+}
+
+.scroll-paper {
+    background-color: #f3e9d2;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    height: 250px;
+    transition: height 1s ease;
+    background-image: radial-gradient(circle at top, #fdf6e3, #f3e9d2);
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1), 0 0 10px rgba(0,0,0,0.1), 0 0 60px #cbb994;
+    overflow: hidden;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.scroll-paper.open {
+    height: 700px;
+    padding: 40px 20px;
+}
+
+.scroll-content {
+    transition: opacity 0.5s ease;
+}
+
+.scroll-content.hidden {
+    opacity: 0;
+    pointer-events: none;
+    height: 0;
+    overflow: hidden;
+}
+
+.intro-text {
+    max-width: 500px;
+    font-size: 1.1rem;
+    color: #4e342e;
+    margin-bottom: 10px;
+}
+
+.intro-question {
+    font-weight: bold;
+    color: #3e2723;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.open-btn {
+    background-color: #0c5c3b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.signup-form {
+    opacity: 0;
+    transition: opacity 1s ease 1s;
+    width: 100%;
+    max-width: 500px;
+    margin: auto;
+    display: none;
+}
+
+.scroll-paper.open .signup-form {
+    opacity: 1;
+    display: block;
+}
+
+.custom-input {
+    height: 45px;
+    border-radius: 8px;
+    background-color: white !important;
+}
+
+.custom-input:focus {
+    border-color: black;
+    box-shadow: 0 0 0 0.2rem rgba(0, 0, 0, 0.25);
+    outline: none;
+    background-color: white !important;
+}
+
+input.custom-input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    -webkit-text-fill-color: black !important;
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+.btn-rounded {
+    background-color: #00754a;
+    color: #fff;
+    width: 130px;
+    height: 45px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-rounded:hover {
+    background-color: #004d39;
+    color: white !important;
+}
+
+.custom-label {
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+/* ===== Invalid Feedback ===== */
+.invalid-feedback {
+    color: #dc3545;
+    font-size: 0.85rem;   
+    display: none;         
+    margin-top: 3px;      
+    margin-bottom: 0;      
+    animation: fadeIn .3s ease-in-out;
+}
+
+/* تظهر الرسالة لما تكون active */
+.invalid-feedback.active {
+    display: block;
+}
+
+/* Highlight على input الغلط */
+.is-invalid {
+    border-color: #dc3545;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.footer{background:#1f3d2b;color:#fff;padding:40px 20px 0}
+.footer a{color:#fff;text-decoration:none;margin-bottom:8px;display:block}
+.footer h6{font-weight:bold;margin-bottom:16px}
+.footer-bottom {background: linear-gradient(to right, #1f3d2b, #005336);color: white;padding: 40px 0 20px;}
+.footer-bottom a {color: white;text-decoration: none;font-weight: 600;}
+.social-icons a {color: white;font-size: 1.5rem;margin: 0 10px;transition: color 0.3s;}
+.social-icons a:hover {color: #ffc107;}

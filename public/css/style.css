@@ -1,0 +1,386 @@
+/* ---------- general ---------- */
+html, body {height: 100%; margin: 0; display: flex; flex-direction: column;}
+body        {font-family:'Segoe UI',sans-serif;}
+
+/* ---------- Navbar & Buttons ---------- */
+.navbar-custom {background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.2); padding:.8rem 2rem;}
+.navbar-brand img{width:55px}
+.navbar-nav .nav-link{font-weight:600;font-size:21px;margin-right:1.2rem;color:#000}
+.navbar-nav .nav-link:hover{color:#00754a}
+.btn-find-store{font-weight:600;font-size:16px;color:#000;margin-right:3.5rem;text-decoration:none}
+.btn-find-store:hover{color:#00754a}
+.btn-signin{border:1px solid #000;border-radius:50px;padding:6px 16px;font-size:14px;font-weight:600;background:transparent;color:#000;margin-right:1rem}
+.btn-signin:hover{background:#e5e5e5}
+.btn-join{border:none;border-radius:50px;padding:6px 16px;font-size:14px;font-weight:600;background:#000;color:#fff}
+.btn-join:hover{background:#00754a}
+.current-nav-item{
+    color: #000 !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    text-decoration-color: #00754a !important;
+    text-decoration-thickness: 5px !important;
+    text-underline-offset: 5px !important;
+}
+
+/* ===== Sign-In Modal ===== */
+.modal-header-img{width:100%;height:396px;;object-fit:cover}
+.Signin-btn{background:#00754a;color:#fff;font-weight:bold;border-radius:30px}
+.Signin-btn:hover{background:#004d39;color: #fff;}
+.modal-content{border-radius:0;overflow:hidden}
+.close-btn{position:absolute;top:10px;right:10px;z-index:10}
+.modal_style .modal-content {background: #f9fafb;}
+.modal_style .form-label {font-weight: 600;color: #1f3d2b;font-size: 0.85rem;}
+.modal_style .form-control {border-radius: 10px;border: 1px solid #d1d5db;transition: all 0.3s ease;font-size: 0.9rem;}
+.modal_style .mb-3 {margin-bottom: 0.65rem !important;}
+.modal_style .form-control:focus {border-color: #1f3d2b;box-shadow: 0 0 0 0.2rem rgba(31, 61, 43, 0.25);}
+#loginError {
+  font-size: 14px;
+  margin-bottom: 3px;
+  animation: fadeIn .3s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Product Modal ===== */
+.bg-dark-green {
+    background-color: #1f3d2b;
+}
+
+.modal-title {
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.btn-close {
+    background-color: white;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+.product-image img {
+    max-width: 300px;
+    object-fit: cover;
+    border: 2px solid #ccc;
+}
+
+.product-details {
+    font-size: 1rem;
+    color: #333;
+}
+
+.modal-footer i {
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.size-option {
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 8px;
+    cursor: pointer;
+    transform: background-color 0.3s, color 0.3s;
+}
+
+.size-option:hover {
+    background-color: #f0f0f0;
+}
+
+.active-size {
+    background-color: #1f3d2b;
+    color: white;
+    border-color: #1f3d2b;
+}
+
+.favorite-icon, .bag-icon {
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.favorite-icon.active {
+    color: #ff0000;
+}
+
+.price-badge {
+    background-color: #ffc107;
+    color: #000;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+}
+
+/* ---------- Footer ---------- */
+.footer{background:#1f3d2b;color:#fff;padding:40px 20px 0}
+.footer a{color:#fff;text-decoration:none;margin-bottom:8px;display:block}
+.footer h6{font-weight:bold;margin-bottom:16px}
+.footer-bottom {background: linear-gradient(to right, #1f3d2b, #005336);color: white;padding: 40px 0 20px;}
+.footer-bottom a {color: white;text-decoration: none;font-weight: 600;}
+.social-icons a {color: white;font-size: 1.5rem;margin: 0 10px;transition: color 0.3s;}
+.social-icons a:hover {color: #ffc107;}
+
+/* Index_B */
+
+.promo-section{padding:60px 0}
+.promo-container{max-width:1400px;min-height:300px;margin:0 auto 60px;display:flex;border-radius:0;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.1);}
+.promo-left{flex:1 1 50%;background:#2e4a3a;color:#fff;padding:50px 40px;display:flex;flex-direction:column;justify-content:center;gap:15px;align-items: center;text-align: center;}
+.second-text{background-color: #f3f1f0; color: #2e4a3a;}
+.third .promo-left{background-color: #f5f5dc; color: #00754a;}
+.promo-left h2{font-weight:700;margin-bottom:20px;font-size:40px;text-shadow:1px 1px 1px rgba(0,0,0,0.1);}
+.promo-left p{font-size:22px;line-height:1.5}
+.promo-btn{margin-top:20px;border:1px solid #fff;background:transparent;color:#fff;padding:10px 28px;border-radius:30px;transition:.3s;width:max-content;font-size:16px;font-weight:700;letter-spacing:.5px;text-decoration:none;}
+.Second_Offer a{color: #2e4a3a;border-color: #2e4a3a;}
+.Second_Offer a:hover{background: #2e4a3a;color: #fff;}
+.third a{color: #00754a;border-color: #00754a;}
+.third a:hover{background-color: #00754a;color: #f5f5dc;}
+.promo-btn:hover{background:#fff;color:#2e4a3a}
+.promo-right{flex:1 1 50%}
+.promo-right img{width:100%;height:100%;object-fit:cover}
+.promo-container.reverse{flex-direction:row-reverse}
+@media (max-width:768px){
+    .promo-container{flex-direction:column;height:auto;border-radius:0}
+    .promo-left,.promo-right{flex:none;height:auto}
+}
+
+/* Menu_B */
+
+/* --------------Sidebar-------------- */
+.sidebar {width:200px;background:#fff;height:100vh;padding:20px;}
+.sidebar li{margin-bottom:85px;margin-left:40px;margin-top:70px;font-size:20px;font-weight:600;}
+.sidebar .side-link{text-decoration:none;color:#000;}
+.sidebar .side-link:hover{color:#00754a;}
+.current{color:#00754a !important;font-weight:700;}
+
+/* --------------Main-Content-------------- */
+.drink-img-menu {width:120px;height:120px;object-fit:cover;border-radius:50%;border:2px solid #ddd;}
+.drink-item-menu {text-align:center;margin-bottom:30px;}
+.section-title-menu {font-size:24px;font-weight:bold;margin-bottom:30px;border-bottom:1px solid #ddd;padding-bottom:10px;}
+
+/* Hot_Coffee_B */
+
+/* --------------Main-Content-------------- */
+.drink-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+}
+
+.drink-item {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    /* border-bottom: none !important; */
+    padding-bottom: 10px;
+    margin-left: 105px;
+}
+
+.items-title {
+    border-bottom: 2px solid #ddd;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ====== container ====== */
+.nav-icons{
+  display: flex;
+  gap: 18px;               
+  align-items: center;
+  padding: 6px 12px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ====== المشترك لكل زر ====== */
+.nav-icons a{
+  position: relative;        
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background .15s ease, color .15s ease, transform .12s ease;
+}
+
+/* ====== الايقونات ====== */
+.nav-icons a i {
+  font-size: 18px;           /* حجم الايكون */
+  line-height: 1;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* ====== تأثير hover خفيف ====== */
+.nav-icons a:hover{
+  color: #111827;            /* يصبح أغمق عند المرور */
+  background: rgba(2,6,23,0.03);
+  transform: translateY(-1px);
+}
+
+/* ====== ستايل خاص للسلة مع عداد ====== */
+/* .cart-btn {
+  لو عايز توسيع خاص للسلة، حط هنا
+} */
+
+.cart-count{
+  position: absolute;
+  top: 0px;                  /* عدل لو عايز موضع أدق */
+  right: -6px;
+  transform: translateY(-40%); /* يجعلها فوق الايكون شوية */
+  background-color: #0b4ea2; /* لون داكن أزرق/نيفي زي الصورة */
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  box-shadow: 0 4px 8px rgba(2,6,23,0.12);
+  line-height: 1;
+}
+
+.favorite-btn:hover i { color: #00754a; }
+
+.cart-btn:hover i { color: #00754a; }
+
+.account-btn:hover i { color: #00754a; }
+
+@media (max-width: 520px){
+  .nav-icons { gap: 14px; }
+  .nav-icons a { padding: 6px 8px; font-size: 14px; }
+  .nav-icons a i { font-size: 18px; }
+  .cart-count { right: -4px; top: -2px; padding: 2px 6px; font-size: 10px; }
+}
+
+
+
+
+.account-container {
+  position: relative;
+  display: inline-block;
+}
+
+.account-btn {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.account-btn:hover {
+  color: #007bff;
+}
+
+/* القائمة المنسدلة */
+.account-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 240px;
+  background: #f8f8f8; /* رمادي فاتح زي الصورة */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.account-container:hover .account-menu,
+.account-menu:hover {
+  display: flex;
+}
+
+/* القائمة الداخلية */
+.account-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-menu li {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.account-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: background 0.3s, color 0.3s;
+}
+
+.account-menu li a:hover {
+  background: #ececec;
+  color: #007bff;
+}
+
+/* اسم المستخدم */
+.username {
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 4px;
+}
+
+/* قسم الجيفت */
+.gift-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gift-section img {
+  width: 20px;
+  height: 20px;
+}
+
+/* الفوتر */
+.account-footer {
+  border-top: 1px solid #ddd;
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* زر اللوج آوت */
+.logout-btn {
+  display: inline-block !important;
+  background: #4a4a4a;
+  color: white !important;
+  padding: 8px 30px !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  transition: background 0.3s !important;
+  border: none !important;
+}
+
+.logout-btn:hover {
+  background: #333 !important;
+}

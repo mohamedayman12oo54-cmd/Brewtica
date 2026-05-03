@@ -1,0 +1,1196 @@
+
+/* ---------- Navbar & Buttons ---------- */
+.navbar-custom {background:#fff; box-shadow:0 2px 4px rgba(0,0,0,.2); padding:.8rem 2rem;}
+.navbar-brand img{width:55px}
+.navbar-nav .nav-link{font-weight:600;font-size:21px;margin-right:1.2rem;color:#000}
+.navbar-nav .nav-link:hover{color:#00754a}
+.btn-find-store{font-weight:600;font-size:16px;color:#000;margin-right:3.5rem;text-decoration:none}
+.btn-find-store:hover{color:#00754a}
+.btn-signin{border:1px solid #000;border-radius:50px;padding:6px 16px;font-size:14px;font-weight:600;background:transparent;color:#000;margin-right:1rem}
+.btn-signin:hover{background:#e5e5e5}
+.btn-join{border:none;border-radius:50px;padding:6px 16px;font-size:14px;font-weight:600;background:#000;color:#fff}
+.btn-join:hover{background:#00754a}
+.current-nav-item{
+    color: #000 !important;
+    font-weight: 700 !important;
+    text-decoration: underline !important;
+    text-decoration-color: #00754a !important;
+    text-decoration-thickness: 5px !important;
+    text-underline-offset: 5px !important;
+}
+
+/* Basic Reset and Setup */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    direction: ltr;
+    text-align: left;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/*==============================================================================================*/
+
+/* ====== container ====== */
+.nav-icons{
+  display: flex;
+  gap: 18px;               
+  align-items: center;
+  padding: 6px 12px;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ====== المشترك لكل زر ====== */
+.nav-icons a{
+  position: relative;        
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: background .15s ease, color .15s ease, transform .12s ease;
+}
+
+/* ====== الايقونات ====== */
+.nav-icons a i {
+  font-size: 18px;           /* حجم الايكون */
+  line-height: 1;
+  display: inline-block;
+  transform-origin: center;
+}
+
+/* ====== تأثير hover خفيف ====== */
+.nav-icons a:hover{
+  color: #111827;            /* يصبح أغمق عند المرور */
+  background: rgba(2,6,23,0.03);
+  transform: translateY(-1px);
+}
+
+/* ====== ستايل خاص للسلة مع عداد ====== */
+/* .cart-btn {
+  لو عايز توسيع خاص للسلة، حط هنا
+} */
+
+.cart-count{
+  position: absolute;
+  top: 0px;                  /* عدل لو عايز موضع أدق */
+  right: -6px;
+  transform: translateY(-40%); /* يجعلها فوق الايكون شوية */
+  background-color: #0b4ea2; /* لون داكن أزرق/نيفي زي الصورة */
+  color: #fff;
+  font-weight: 700;
+  font-size: 11px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  box-shadow: 0 4px 8px rgba(2,6,23,0.12);
+  line-height: 1;
+}
+
+.favorite-btn:hover i { color: #00754a; }
+
+.cart-btn:hover i { color: #00754a; }
+
+.account-dropdown-toggle:hover i { color: #00754a; }
+
+@media (max-width: 520px){
+  .nav-icons { gap: 14px; }
+  .nav-icons a { padding: 6px 8px; font-size: 14px; }
+  .nav-icons a i { font-size: 18px; }
+  .cart-count { right: -4px; top: -2px; padding: 2px 6px; font-size: 10px; }
+}
+
+.account-container {
+  position: relative;
+  display: inline-block;
+}
+
+.account-dropdown-toggle {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.account-dropdown-toggle:hover {
+  color: #007bff;
+}
+
+/* القائمة المنسدلة */
+.account-menu {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  width: 240px;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+  padding: 8px 0;
+}
+
+.account-container:hover .account-menu,
+.account-menu:hover {
+  display: flex;
+}
+
+/* القائمة الداخلية */
+.account-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account-menu li {
+  padding: 10px 20px;
+  font-size: 14px;
+  color: #333;
+}
+
+.account-menu li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  transition: background 0.3s, color 0.3s;
+}
+
+.account-menu li a:hover {
+  background: #ececec;
+  color: #007bff;
+}
+
+
+/* اسم المستخدم */
+.username {
+  font-weight: 600;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 4px;
+}
+
+/* قسم الجيفت */
+.gift-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gift-section img {
+  width: 20px;
+  height: 20px;
+}
+
+/* الفوتر */
+.account-footer {
+  border-top: 1px solid #ddd;
+  padding: 12px 0;
+  text-align: center;
+}
+
+/* زر اللوج آوت */
+.logout-btn {
+  display: inline-block !important;
+  background: #4a4a4a;
+  color: white !important;
+  padding: 8px 30px !important;
+  border-radius: 4px !important;
+  text-decoration: none !important;
+  font-size: 16px !important;
+  transition: background 0.3s !important;
+  border: none !important;
+}
+
+.logout-btn:hover {
+  background: #333 !important;
+}
+
+/*==============================================================================================*/
+
+/* ------------------ Breadcrumb ------------------ */
+.account-breadcrumb {
+    max-width: 1300px;
+    margin: 15px auto;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #777;
+}
+.account-breadcrumb span {
+    margin: 0 5px;
+    color: #ccc;
+}
+.account-breadcrumb a {
+    color: #555;
+}
+
+/* ------------------ Main Container ------------------ */
+.account-main-container {
+    max-width: 1300px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    display: flex;
+    gap: 30px;
+}
+
+/* ------------------ Sidebar Menu ------------------ */
+.account-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background-color: #fff;
+    padding: 20px 0;
+    border-radius: 4px;
+    border: 1px solid #eee;
+}
+
+.account-info {
+    padding: 0 20px 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 10px;
+}
+
+.account-info h4 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.account-menu-sbar {
+    list-style: none;
+    padding: 0;
+}
+
+.account-menu-sbar li a {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #555;
+    transition: background-color 0.2s;
+}
+
+.account-logout {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #555;
+    transition: background-color 0.2s;
+    border: none;
+    background: none;
+}
+
+.account-menu-sbar li a i,
+.account-menu-sbar li button i {
+    margin-right: 10px;
+    width: 15px;
+    text-align: center;
+}
+
+.account-menu-sbar li.account-active > a {
+    background-color: #f0f0f0;
+    font-weight: bold;
+    color: #333;
+    border-left: 3px solid #000;
+    padding-left: 17px;
+}
+
+.account-menu-sbar li a:hover:not(.account-current-page) {
+    background-color: #f7f7f7;
+}
+
+.account-dropdown-toggle {
+    justify-content: space-between;
+}
+
+.account-submenu {
+    list-style: none;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.account-active-submenu {
+    max-height: 500px;
+    border-top: 1px solid #eee;
+}
+
+.account-submenu li a {
+    padding: 8px 30px 8px 20px;
+    font-size: 13px;
+    color: #777;
+}
+
+.account-submenu li a.account-current-page {
+    background-color: #e0e0e0;
+    color: #333;
+    font-weight: bold;
+}
+
+/* ------------------ Main Content Area ------------------ */
+.account-content {
+    flex-grow: 1;
+}
+
+.account-content h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: normal;
+    color: #555;
+}
+
+.account-personal-info-form {
+    background-color: #fff;
+    padding: 30px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+.account-personal-info-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Form Styles */
+.account-form-group {
+    margin-bottom: 20px;
+}
+
+.account-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 13px;
+    color: #555;
+}
+
+.account-form-group input[type="text"],
+.account-form-group input[type="email"],
+.account-form-group input[type="tel"],
+.account-form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.account-form-group input:focus,
+.account-form-group select:focus {
+    border-color: #000;
+}
+
+.account-form-group.account-row {
+    display: flex;
+    gap: 20px;
+}
+
+.account-form-group.account-row .account-col {
+    flex: 1;
+}
+
+.account-input-with-icon {
+    position: relative;
+}
+
+.account-input-with-icon .account-verified-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.account-radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.account-radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.account-radio-label input[type="radio"] {
+    margin-right: 5px;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    position: relative;
+    outline: none;
+    cursor: pointer;
+}
+
+.account-radio-label input[type="radio"]:checked {
+    border-color: #000;
+}
+
+.account-radio-label input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.account-date-of-birth {
+    display: flex;
+    gap: 15px;
+}
+
+.account-date-select {
+    flex: 1;
+}
+
+.account-date-select label {
+    display: none;
+}
+
+/* ------------------ Action Buttons ------------------ */
+.account-action-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.account-action-btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    width: 250px;
+}
+
+.account-btn-save {
+    background-color: #000;
+    color: #fff;
+}
+
+.account-btn-save:hover {
+    background-color: #333;
+}
+
+.account-btn-delete {
+    background: none;
+    color: #000;
+    border: none;
+    text-decoration: underline;
+    padding: 0;
+    font-size: 14px;
+    width: auto;
+}
+
+.account-btn-delete:hover {
+    color: #555;
+}
+
+/* ------------------ Responsiveness ------------------ */
+@media (max-width: 992px) {
+    .account-main-container {
+        flex-direction: column;
+    }
+
+    .account-sidebar {
+        width: 100%;
+        border-radius: 0;
+    }
+
+    .account-content h1 {
+        padding: 0 20px;
+    }
+
+    .account-personal-info-form {
+        padding: 20px;
+        margin: 0 20px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .account-header-content {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .account-categories {
+        order: 2;
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
+        border-top: 1px solid #eee;
+        padding-top: 10px;
+    }
+
+    .account-search-bar {
+        order: 3;
+        width: 100%;
+        max-width: none;
+        margin: 10px 0;
+    }
+
+    .account-user-actions {
+        order: 1;
+    }
+
+    .account-form-group.account-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .account-date-of-birth {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .account-btn {
+        width: 100%;
+    }
+}
+
+/* ------------------ Wish List & Product Grid Styles ------------------ */
+
+.account-wishlist-header {
+    display: flex;
+    justify-content: space-between; /* Adjusted to space out H2 and search bar */
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px 0;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; /* Added for responsiveness */
+    gap: 15px; /* Added for spacing on smaller screens */
+}
+
+.account-wishlist-header h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* New Search Favorites Bar */
+.account-search-favorites {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px; /* More rounded corners like the image */
+    padding: 8px 15px;
+    flex-grow: 1; /* Allow it to take available space */
+    max-width: 350px; /* Limit its width */
+    background-color: #fff;
+}
+
+.account-search-favorites i {
+    color: #999;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.account-search-favorites input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 14px;
+    background: none;
+    color: #333;
+}
+
+.account-search-favorites input::placeholder {
+    color: #999;
+}
+
+/* Individual Product Card */
+.account-product-card {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: box-shadow 0.3s;
+}
+
+.account-product-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.account-product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    min-height: 250px; /* Ensure consistent image height */
+    object-fit: cover;
+    background-color: #f7f7f7; 
+}
+
+.account-product-details {
+    padding: 10px;
+    text-align: center;
+}
+
+.account-product-name {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    height: 35px; /* Fixed height for consistency */
+    overflow: hidden;
+}
+
+.account-product-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.account-product-rating {
+    font-size: 12px;
+    color: #fdd835;
+    margin-bottom: 10px;
+}
+
+.account-product-rating i {
+    color: gold;
+}
+
+/* Card Actions (Heart only) */
+.account-card-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Position to top-right */
+    display: flex; /* Kept for potential future flexibility */
+    justify-content: flex-end; /* Align heart to the right */
+    align-items: center;
+    z-index: 10;
+}
+
+/* Clickable Heart Icon */
+.account-favorite-icon.clickable-heart {
+    color: #ff4d4d; /* Red color to show it's in the Wish List */
+    font-size: 20px;
+    cursor: pointer; /* Indicate it's clickable */
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    padding: 3px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.account-favorite-icon.clickable-heart:hover {
+    transform: scale(1.1); /* Slight animation on hover */
+}
+
+
+/* Add to Cart Button (Small) */
+.account-btn-add-to-cart-sm {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.account-btn-add-to-cart-sm:hover {
+    background-color: #333;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .account-wishlist-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .account-search-favorites {
+        width: 100%; /* Make search bar full width on small screens */
+        max-width: none;
+        margin-top: 10px;
+    }
+}
+
+.account-product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 0;
+}
+
+/* ---------- Confirmation Modal ------------ */
+/* إخفاء النافذة افتراضياً وتحديد وضعيتها */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1000; /* تأكد أنها فوق كل شيء آخر */
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.4); /* خلفية معتمة */
+}
+
+/* محتوى النافذة */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* توسيط عمودي وأفقي */
+    padding: 20px;
+    padding-top: 35px;
+    border: 1px solid #888;
+    width: 80%; /* يمكن تغييرها حسب الرغبة */
+    max-width: 400px; /* حجم معقول لنافذة تأكيد */
+    position: relative;
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 1.2rem;
+    margin-top: 0;
+}
+
+/* زر الإغلاق X */
+.close-button {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* الأزرار */
+#confirmRemoveBtn, #cancelRemoveBtn {
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #333;
+    width: 90%;
+}
+
+#confirmRemoveBtn {
+    background-color: #333;
+    color: white;
+}
+
+#confirmRemoveBtn:hover{
+    background-color: #000;
+}
+
+#cancelRemoveBtn {
+    background-color: white;
+    color: #333;
+}
+
+/* ========================================================= */
+/* 2. تنسيقات حالة "القائمة المفضلة فارغة" (Favourites Empty) */
+/* ========================================================= */
+
+.title-text-favourites {
+    /* *الإضافة الحاسمة*: إجبار العنصر على التمدد الكامل داخل الـ Grid */
+    grid-column: 1 / -1; 
+    
+    /* عنوان "FAVOURITES" */
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    /* التوسيط داخل منطقة التمدد */
+    text-align: center;
+    display: block;
+}
+
+.content-area {
+    /* *الإضافة الحاسمة*: إجبار العنصر على التمدد الكامل داخل الـ Grid */
+    grid-column: 1 / -1; 
+    
+    /* تحديد عرض الكتلة النصية وتوسيطها */
+    width: 100%;
+    max-width: 550px; 
+    margin: 0 auto; /* التوسيط الأفقي للكتلة */
+    padding: 0;
+    /* توسيط المحتوى الداخلي (النص والزر) */
+    text-align: center; 
+}
+
+.message-heading {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.message-text {
+    /* تم إزالة الـ max-width: 600px ليتناسب مع max-width الأب */
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+}
+
+/* ------------------------------------ */
+/* تنسيقات الزر (تم تعديل بسيط في display) */
+/* ------------------------------------ */
+.btn-continue {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 0;
+    padding: 15px 40px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    font-size: 1.05rem;
+    position: relative;
+    /* الحفاظ على inline-flex لتضمين السهم */
+    display: inline-flex; 
+    align-items: center;
+    text-decoration: none;
+    /* لا نحتاج لـ margin: 0 auto هنا لأن الأب (.content-area) يوسِّط المحتوى عبر text-align: center */
+}
+
+.btn-continue:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.btn-continue::after {
+    content: '>';
+    margin-left: 10px;
+    font-weight: 900;
+}
+
+/* @media (max-width: 768px) Block is redundant for this specific problem and can be kept or removed based on your full CSS structure */
+/* يمكنك ترك هذا الكود كما هو في ملفك أو إزالته إذا لم يكن ضرورياً */
+@media (max-width: 768px) {
+    /* .favourites-container is removed, so this rule is effectively removed */
+}
+
+/* ---------- My Bag ---------- */
+
+/*
+ * IMPORTANT: You must link Bootstrap CSS and Bootstrap Icons in your HTML header.
+ * Example:
+ * <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ * <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+ */
+
+/* General container styling */
+.coffee-cart-container {
+    max-width: 1200px; /* Adjust as needed */
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-bottom: 140px;
+}
+
+/* Specific styling for the top "Favorites" button to match the image */
+.coffee-cart-favorites-btn:hover {
+    background-color: #e9ecef !important; /* Lighter hover background */
+    border-color: #ced4da !important;
+}
+
+/* Free Shipping Banner */
+.coffee-cart-shipping-banner {
+    /* Styles are mostly inline for exact match, but hover can be here */
+    font-size: 0.9rem;
+}
+.coffee-cart-shipping-banner strong {
+    font-weight: 700; /* Ensure strong is visually distinct */
+}
+
+/* Cart Item Card Styling */
+.coffee-cart-item-card {
+    transition: box-shadow 0.2s ease-in-out;
+}
+.coffee-cart-item-card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05) !important; /* subtle shadow on hover */
+}
+
+/* Image Checkbox alignment */
+.coffee-cart-image-area .form-check-input {
+    min-width: 1.1em; /* Ensure checkbox is a decent size */
+    min-height: 1.1em;
+}
+
+/* Size Selector Dropdown Styling */
+/* .coffee-cart-size-select:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+} */
+
+/* Styling for the new size selector buttons */
+
+.coffee-cart-size-selector {
+    /* Container for the buttons */
+    gap: 5px; /* Small space between buttons */
+}
+
+.coffee-cart-size-btn {
+    /* General button appearance */
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 50%; /* Makes it circular */
+    
+    /* Default (Inactive) state styling */
+    background-color: transparent;
+    color: #495057; /* Dark gray text */
+    border: 1px solid #ced4da; /* Light gray border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover state for inactive buttons */
+.coffee-cart-size-btn:not(.coffee-cart-size-active):hover {
+    background-color: #f8f9fa; /* Slight background change on hover */
+    border-color: #adb5bd;
+}
+
+/* Active state styling (M in the image) */
+.coffee-cart-size-active {
+    background-color: #1f3d2b !important; /* Black background */
+    color: white !important; /* White text */
+    /* border-color: #212529 !important; */
+    /* box-shadow: 0 0 0 2px #fff, 0 0 0 4px #212529; */
+}
+
+/* Ensure active button doesn't change on hover/focus */
+.coffee-cart-size-active:hover,
+.coffee-cart-size-active:focus {
+    background-color: #1f3d2b !important;
+    color: white !important;
+    /* border-color: #212529 !important; */
+    /* box-shadow: 0 0 0 2px #fff, 0 0 0 4px #212529; */
+}
+
+/*=========*/
+
+/* Quantity Control Buttons */
+.coffee-cart-quantity-controls .btn-outline-secondary {
+    color: #6c757d;
+}
+.coffee-cart-quantity-controls .btn-outline-secondary:hover {
+    background-color: #e2e6ea;
+    border-color: #dae0e5;
+    color: #343a40;
+}
+.coffee-cart-qty-input:focus {
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Remove button styling */
+.coffee-cart-remove-btn {
+    color: #6c757d !important;
+}
+.coffee-cart-remove-btn:hover {
+    color: #dc3545 !important; /* Make it red on hover */
+}
+
+/* Order Summary Card */
+.coffee-cart-summary-card {
+    /* Background and border-radius mostly inline */
+}
+
+.card-body {
+    margin-bottom: 50px;
+}
+.coffee-cart-summary-card .coffee-cart-total span {
+    color: #212529; /* Darker total text */
+}
+
+.coffee-cart-summary-card .coffee-cart-subtotal span {
+    margin-bottom: 18px;
+}
+
+/* COMPLETE ORDER Button */
+.coffee-cart-complete-order-btn {
+    background-color: #212529; 
+    border-color: #212529; 
+    border-radius: 0; 
+    font-size: 1rem;
+}
+
+.coffee-cart-complete-order-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border-color: #000;
+}
+
+/* Input Group Buttons (Use My Gift Club / Discount Code) */
+.coffee-cart-gift-club-input-group .btn-outline-secondary,
+.coffee-cart-discount-input-group .btn-outline-secondary {
+    color: #6c757d;
+    background-color: none;
+    border-color: #dee2e6;
+}
+.coffee-cart-gift-club-input-group .btn-outline-secondary:hover,
+.coffee-cart-discount-input-group .btn-outline-secondary:hover {
+    background-color: #dee2e6;
+    border-color: #ced4da;
+    color: #495057;
+}
+
+.coffee-cart-points-input,
+.coffee-cart-discount-input {
+    font-size: 0.85rem; 
+    border-radius: 0; 
+    border-color: #dee2e6;
+}
+
+.coffee-cart-points-input:focus,
+.coffee-cart-discount-input:focus {
+    box-shadow: none !important;
+    border-color: #ced4da;
+}
+
+/* .coffee-cart-discount-input {
+    font-size: 0.55rem; 
+    border-radius: 0.25rem 0 0 0.25rem; 
+    border-color: #dee2e6;
+} */
+
+/* Accordion for Money Points */
+/* .coffee-cart-money-points-accordion .accordion-item {
+    background-color: transparent;
+    border: none;
+    margin-top: 40px;
+} */
+/* .coffee-cart-money-points-toggle {
+    text-align: left;
+    border-bottom: none !important;
+} */
+
+/* New Money Points Input Group Styling */
+
+/* Styling for the icon rotation when content is collapsed/expanded */
+
+/* Note: The transition style is now INLINE in the HTML: 
+   style="transition: transform 0.3s ease;"
+   If you prefer it here, remove it from HTML and add:
+   .coffee-cart-money-points-toggle-icon { transition: transform 0.3s ease; }
+*/
+
+/* Rotate 180 degrees (pointing down/expanded) when the content is hidden/collapsed */
+/* The icon starts pointing UP (no rotation) when "show" is active */
+/* When Bootstrap hides the content, it removes the 'show' class and keeps the expanded state: */
+.coffee-cart-money-points-toggle-icon[aria-expanded="false"] {
+    /* When content is HIDDEN (collapsed), the aria-expanded will be 'false' */
+    transform: rotate(180deg);
+}
+
+.coffee-cart-money-points-toggle-icon[aria-expanded="true"] {
+    /* When content is VISIBLE (expanded), the aria-expanded will be 'true' */
+    transform: rotate(0deg); /* No rotation (pointing up) */
+}
+
+/* .coffee-cart-summary-column {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+
+} */
+
+.coffee-cart-row {
+    position: relative;
+}
+
+.coffee-cart-summary-fixed {
+    position: absolute;
+    top: 0;
+    right: 15px;
+    width: 33.3333%;
+    z-index: 10;
+}
+
+@media (min-width: 992px) {
+    .coffee-cart-summary-fixed {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        width: 33.3333%;
+    }
+}
+
+
+.coffee-cart-money-points-toggle:focus {
+    box-shadow: none !important;
+    border-color: #ced4da;
+}
+
+.coffee-cart-money-points-toggle:not(.collapsed) {
+    color: #212529; /* Darker text when open */
+    background-color: white; /* Ensure background is white when open */
+    box-shadow: none;
+}
+.coffee-cart-money-points-toggle::after {
+    font-size: 0.75rem; /* Adjust arrow size */
+    transform: translateY(-50%); /* Center arrow vertically */
+}
+.coffee-cart-money-points-body {
+    border-top: none; /* No top border for the body */
+    background-color: #f8f9fa; /* Slightly off-white for the body */
+    border-radius: 0 0 0.25rem 0.25rem;
+}
+.coffee-cart-apply-points-btn {
+    color: #0d6efd; /* Bootstrap blue for links */
+}
+.coffee-cart-apply-points-btn:hover {
+    text-decoration: underline !important;
+}
+/* Remove Bootstrap default border from accordion button when it's not collapsed */
+.accordion-button:not(.collapsed)::after {
+    background-image: var(--bs-accordion-btn-icon); /* Revert to default arrow */
+    transform: rotate(0deg); /* Reset rotation */
+}
+
+/* ---------- Footer ---------- */
+.footer{background:#1f3d2b;color:#fff;padding:40px 20px 0}
+.footer a{color:#fff;text-decoration:none;margin-bottom:8px;display:block}
+.footer h6{font-weight:bold;margin-bottom:16px}
+.footer-bottom {background: linear-gradient(to right, #1f3d2b, #005336);color: white;padding: 40px 0 20px;}
+.footer-bottom a {color: white;text-decoration: none;font-weight: 600;}
+.social-icons a {color: white;font-size: 1.5rem;margin: 0 10px;transition: color 0.3s;}
+.social-icons a:hover {color: #ffc107;}
+
+
